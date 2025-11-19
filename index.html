@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX</title>
+    <style>
+        header, footer {
+            display: flex;
+            justify-content: center;
+        }
+        main > * {
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Resumen de AJAX</h1>
+    </header>
+    <main>
+        <h3>¿Qué es AJAX?</h3>
+        <p>
+            AJAX (Asynchronous JavaScript And XML) es una técnica que permite a una página web enviar y recibir datos del servidor sir recargar la página completa. 
+            AJAX permite actualizar solo una parte de la página, <br>de manera rápida y silenciosa. Esto hace que las paginas sean más rápidas y dinámicas. 
+            Aunque incluya XML, hoy en día se usa principalmente con JSON.
+
+        </p>
+        <h3>¿Para qué se usa AJAX?</h3>
+        <p>
+            •	Cargar datos sin recargar la página. Ejemplo: ver más comentarios en Facebook. <br>
+            •	Enviar formularios sin refrescar. Ejemplo: registrarte o iniciar sesión sin que la página se recargue.<br>
+            •	Mostrar resultados al escribir. Ejemplo: sugerencias de Google cuando escribes.<br>
+            •	Actualizar partes de un sitio web. Ejemplo: el carrito de compras en Amazon.<br>
+
+        </p>
+        <h3>¿Cómo funciona AJAX?</h3>
+        <p>
+            1.	La página web envía una petición al servidor.<br>
+            2.	El servidor procesa esa petición.<br>
+            3.	El servidor devuelve una respuesta.<br>
+            4.	JavaScript recibe esa respuesta.<br>
+            5.	La página se actualiza automáticamente sin recargarse.<br>
+
+        </p>
+        <h3>Ejemplo:</h3>
+        <pre>
+            &lt;button onclick="cargarMensaje()"&gt;Cargar mensaje&lt;/button&gt;
+            &lt;p id="resultado"&gt;&lt;/p&gt;
+            <br>
+            &lt;script&gt;
+                function cargarMensaje() {
+                    fetch("mensaje.php")   // Se llama a un archivo en el servidor
+                        .then(respuesta =&gt; respuesta.text())
+                        .then(data =&gt; {
+                            // Actualiza la página
+                            document.getElementById("resultado").innerHTML = data; 
+                        });
+                }
+            &lt;/script&gt;
+            <br>
+            &lt;?php
+                echo "Hola desde el servidor!";
+            ?&gt;
+
+        </pre>
+    </main>
+    <footer>
+        Derechos reservados.......Karen Garrido......mat. 100544303.......2025 
+    </footer>
+</body>
+</html>
